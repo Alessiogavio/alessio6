@@ -2,5 +2,9 @@
 
 // THIS IS EDSON AND ALESSIO TEXT.
 
+<<<<<<< HEAD
 
 // this is alessio gavioli
+=======
+1 + 1 = 2
+>>>>>>> 8bbf0e92ae785917bc2f3f45d29e02617ab41009
