@@ -9,12 +9,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <style>
-
+        ul{
+            height: 150px;
+            width: 200px;
+            background-color: red;
+            border: solid 1px black;
+        }
+        
+        .verde{
+            background-color: green;
+        }
     </style>
 
 </head>
 <body>
-    <h2>Paragrafo 1</h2>
+    <h2>Paragrafo 1<code>Paragrafo1</code></h2>
     <p id="paragrafo1" class="light">Questo è il paragrafo numero 1 Questo è il paragrafo numero 1 
         Questo è il paragrafo numero 1 Questo è il paragrafo numero 1 </p>
 
@@ -35,25 +44,40 @@
     <span class="light">Ciao JQuery</span>
     <button id="accendimi">accendimi</button>
     <button id="spegnimi">spegnimi</button>
-    <input type="text" placeholder="inserisci testo">
+    <button id="up_down">up_down</button>
+    <button id="title">title</button>
+    <button id="list">list</button>
+    <button id="change_color">change_color</button>
+    <button id="color_yellow_border">color_yellow_border</button>
+    <button id="body">body</button>
 
-    <!--SELECTOR
+
+    
+    <ul class="verde"> <!--(se utlizzo comando addClass per change_color rimuovere "<ul class="verde"")-->
+        <li>ciao</li>
+        <li>buongiorno</li>
+        <li>buonasera</li>
+        <li>salve</li>
+    </ul>
+    <ul>
+        <li>hello</li>
+        <li>goodorning</li>
+        <li>goodevening</li>
+        <li>bye</li>
+    </ul>
+
+
+
+    
+    <input type="text" id="input prova"value="tutorial jquery">
+
+    <!--
     <script>
-        $(document).ready(function(){ (nasconde il contenuto di span.light)
-          $('span.light').hide();  
+        $(document).ready(function(){            
+          $('h2').hide();  
         });    
-    </script>-->
-
-    <!--EVENT
-        <script>
-        $(document).ready(function(){
-
-            $("h2").mouseenter(function(){
-                alert('ciao');
-            });
-        });
     </script>
-    -->
+    -->     
 
     <script>
         $(document).ready(function(){
@@ -67,6 +91,70 @@
             });
        });
     </script>
+
+    <script>
+        $(document).ready(function(){
+            $("button#up_down").click(function(){
+                $("p").css("color", "red").slideUp(2000).slideDown(2000); 
+                                       
+            });
+       });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('button#title').click(function(){
+                $("code").before("input cambiato"); 
+                                        
+            });
+    });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('button#list').click(function(){
+                $("ul").empty(); //(remove)
+                                        
+            });
+    });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+          let verdeClass= 'verde';
+ 
+          $('button#change_color').click(function(){
+                $("ul").toggleClass(verdeClass); //(add)
+                                                   
+            });
+    });
+    </script>
+
+
+    <script>
+        $(document).ready(function(){
+        let verdeClass= 'verde';
+
+        $('button#color_yellow_border').click(function(){
+                $("ul").css({"background-color": "yellow","border": "solid 10px blue"}); 
+                                                
+            });
+    });
+    </script>
+
+
+    <script>
+        $(document).ready(function(){
+
+        $('button#body').click(function(){
+            console.log($("body").find("li"));
+                                                
+        });
+    });
+    </script>
+
     
 
 </body>
