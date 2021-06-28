@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial JQuery</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <h2>Paragrafo 1</h2>
+    <p id="paragrafo1" class="light">Questo è il paragrafo numero 1 Questo è il paragrafo numero 1 
+        Questo è il paragrafo numero 1 Questo è il paragrafo numero 1 </p>
+
+
+
+    <h2>Paragrafo 2</h2>
+    <p id="paragrafo2"class="light">Questo è il paragrafo numero 2 Questo è il paragrafo numero 2 
+        Questo è il paragrafo numero 2 Questo è il paragrafo numero 2 </p>
+
+
+    <h2>Paragrafo 3</h2>
+    <p id="paragrafo3"class="light">Questo è il paragrafo numero 3 Questo è il paragrafo numero 3 
+        Questo è il paragrafo numero 3 Questo è il paragrafo numero 3 </p>
+
+
+
+
+    <span class="light">Ciao JQuery</span>
+    <button id="accendimi">accendimi</button>
+    <button id="spegnimi">spegnimi</button>
+    <input type="text" placeholder="inserisci testo">
+
+    <!--SELECTOR
+    <script>
+        $(document).ready(function(){ (nasconde il contenuto di span.light)
+          $('span.light').hide();  
+        });    
+    </script>-->
+
+    <!--EVENT
+        <script>
+        $(document).ready(function(){
+
+            $("h2").mouseenter(function(){
+                alert('ciao');
+            });
+        });
+    </script>
+    -->
+
+    <script>
+        $(document).ready(function(){
+            $("button#accendimi").click(function(){
+                $("p").show();  
+                //alert("Hello! I am an alert box!!");  
+            });
+            $("button#spegnimi").click(function(){
+                $("p").hide();  
+                //alert("Hello! I am an alert box!!");  
+            });
+       });
+    </script>
+    
+
+</body>
+</html>

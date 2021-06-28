@@ -4,3 +4,6 @@ ol > li{
     margin-bottom: 40px;
     
 }
+p{
+    height: 0;
+}
