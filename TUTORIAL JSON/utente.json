@@ -1,0 +1,44 @@
+[{
+    "id": 555,
+    "nome": "Luca",
+    "cognome": "Rossi",
+    "codice fiscale": "LCURSS01P02F205Y",
+    "età": 19,
+    "sposato": false,
+    "indirizzo": {
+        "via": "Valcava 15",
+        "città": "Milano",
+        "provincia": "MI",
+        "codice postale": "20121"
+    },
+    "recapiti": {
+        "email": ["qwewrty@gmail.com","luca.rossi@gmail.com"
+        ],
+        "telefono": [
+        {
+           "tipo" : "ufficio",
+           "numero": "123456789"
+        },
+        {
+            "tipo": "cellulare",
+            "numero":"123456789"
+        }
+    ]
+    },
+    "amici":[
+        {
+            "nome":"Maria",
+            "cognome": "Verdi",
+            "amici": [
+                {
+                    "nome": "Anna",
+                    "cognome":"Gialla"
+                }
+            ]
+        }
+    ]
+},
+{
+    "id":556,
+    "nome": "Leonardo"
+}]
