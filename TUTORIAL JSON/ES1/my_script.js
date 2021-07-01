@@ -14,8 +14,7 @@ $("button").click (function()
                 $.each(client.devices,function(index, device)  
                 {
                     console.info('  -'+device.mac);
-                });
-                
+                });                
             });
             console.info("-------------------------------------");
 
@@ -34,20 +33,47 @@ $("button").click (function()
 
             //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.3
             console.log ("MOD:3");
+
+                //console.log(obj.clients.length)
+
+            var edson = obj.clients.length;
+              for (let i=0;i<edson;i++)
+              {
+                console.log(obj.client)
+
+                for(let i=0;i<edson;i++)
+                {
+                    console.log('  -'+obj.devices);
+                }                
+              }
+
+                          
+              console.info("-------------------------------------");
             
-              for (let i=0;i<3;i++)
+            var edson = obj.clients.length;
+              for (let i=0;i<edson;i++)
               {
-                console.info(obj.clients[i]);
-                console.info(obj.clients.device);
+                $.each(obj.clients,function(index,client){
+                
+                    console.info(client.client);                       
+                    $.each(client.devices,function(index,device)
+                    {
+                        console.log('  -'+device.mac);
+                    });
+                });                               
               }
 
-              for(var i=0;i<obj.clients;i++)
-              {
-                  console.info(obj.client[i]);
-              }
               
-
-
+            //   for(var k in obj)
+            //   {
+            //     console.log(length);
+            //     for(var k in obj)
+            //     {
+            //         console.log(k)
+            //     }
+            //   }
+            
+              
             
     });
 });
