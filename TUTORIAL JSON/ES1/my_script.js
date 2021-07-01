@@ -6,7 +6,7 @@ $("button").click (function()
         console.log(obj);            
 
 
-            //STAMPA UN SOLO VALORE
+            //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.1
             $.each(obj.clients,function(index, client)
             {        
                     
@@ -15,43 +15,55 @@ $("button").click (function()
                 {
                     console.info('  '+device.mac);
                 });
+                
             });
+            console.info("-------------------------------------");
 
-            /*
-            var $ul=$("<ul></ul>");
-            
+            //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.2
+            obj.clients.forEach(function(client)
+            {
+                console.info(client.client);
+                client.devices.forEach(function(device)
+                {
+                    console.info(device.mac)
+                });
+
+            });
+            console.info("-------------------------------------");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*        
             //CICLO FOR STAMPA TUTTI I CLIENTS
             obj.clients.forEach(function(obj) 
-            {
-                
-                $ul.append("<li>"+obj.clients+"</li>");
-                    
+            {                                 
                 console.log(obj.client)                          
-            });
-               
+            });               
             */
             
-            
-            
-            
-            
-            // $("ul").append("<li>"+value.name+"</li>");            
-
-            //document.writeln(parsed.clients);
-             //
-
              /*
-                var lista =obj.clients.querySelectorAll("li");
-                for(){
-                    lista[i].addEventListener("mouseover",function(){
-                        this.classList.add("selezione");
-                    });
-                    lista[i].addEventListener("mouseover",function(){
-                        this.classList.add("selezione");
-                    });
-                    lista[i].addEventListener("click",function(){
-                        this.classList.toggle("fatto");
-                    });
-                }*/
+            var lista =obj.clients.querySelectorAll("li");
+            for(){
+                lista[i].addEventListener("mouseover",function(){
+                    this.classList.add("selezione");
+                });
+                lista[i].addEventListener("mouseover",function(){
+                    this.classList.add("selezione");
+                });
+                lista[i].addEventListener("click",function(){
+                    this.classList.toggle("fatto");
+                });
+            }*/
     });
 });
