@@ -5,7 +5,7 @@ $("button").click (function()
     {
         console.log(obj);            
 
-
+            console.log ("MOD:1");
             //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.1
             $.each(obj.clients,function(index, client)
             {        
@@ -13,57 +13,41 @@ $("button").click (function()
                 console.info(client.client);
                 $.each(client.devices,function(index, device)  
                 {
-                    console.info('  '+device.mac);
+                    console.info('  -'+device.mac);
                 });
                 
             });
             console.info("-------------------------------------");
 
             //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.2
+            console.log ("MOD:2");
             obj.clients.forEach(function(client)
             {
                 console.info(client.client);
                 client.devices.forEach(function(device)
                 {
-                    console.info(device.mac)
+                    console.info('  -'+device.mac)
                 });
 
             });
             console.info("-------------------------------------");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*        
-            //CICLO FOR STAMPA TUTTI I CLIENTS
-            obj.clients.forEach(function(obj) 
-            {                                 
-                console.log(obj.client)                          
-            });               
-            */
+            //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.3
+            console.log ("MOD:3");
             
-             /*
-            var lista =obj.clients.querySelectorAll("li");
-            for(){
-                lista[i].addEventListener("mouseover",function(){
-                    this.classList.add("selezione");
-                });
-                lista[i].addEventListener("mouseover",function(){
-                    this.classList.add("selezione");
-                });
-                lista[i].addEventListener("click",function(){
-                    this.classList.toggle("fatto");
-                });
-            }*/
+              for (let i=0;i<3;i++)
+              {
+                console.info(obj.clients[i]);
+                console.info(obj.clients.device);
+              }
+
+              for(var i=0;i<obj.clients;i++)
+              {
+                  console.info(obj.client[i]);
+              }
+              
+
+
+            
     });
 });
