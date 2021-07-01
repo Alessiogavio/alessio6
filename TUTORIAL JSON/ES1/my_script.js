@@ -31,49 +31,27 @@ $("button").click (function()
             });
             console.info("-------------------------------------");
 
-            //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC --MOD.3
+            //STAMPA TUTTI I CLIENTS E I CORRISPONDENTI MAC CON CICLO FOR --MOD.3
             console.log ("MOD:3");
 
                 //console.log(obj.clients.length)
 
             var edson = obj.clients.length;
+            
               for (let i=0;i<edson;i++)
               {
-                console.log(obj.client)
+                console.log(obj.clients[i].client)
 
-                for(let i=0;i<edson;i++)
+                var matteo = obj.clients[i].devices.length;
+                for(let j=0;j<matteo;j++)
                 {
-                    console.log('  -'+obj.devices);
+                    console.log('  -'+obj.clients[i].devices[j].mac);
                 }                
               }
 
-                          
+                        
               console.info("-------------------------------------");
             
-            var edson = obj.clients.length;
-              for (let i=0;i<edson;i++)
-              {
-                $.each(obj.clients,function(index,client){
-                
-                    console.info(client.client);                       
-                    $.each(client.devices,function(index,device)
-                    {
-                        console.log('  -'+device.mac);
-                    });
-                });                               
-              }
-
-              
-            //   for(var k in obj)
-            //   {
-            //     console.log(length);
-            //     for(var k in obj)
-            //     {
-            //         console.log(k)
-            //     }
-            //   }
-            
-              
-            
+                    
     });
 });
