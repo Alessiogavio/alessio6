@@ -146,8 +146,72 @@ $("button").click (function()
 
 
 
+            console.info("-------------------------------------");
+            //STAMPA TUTTI GLI ARRAY --MOD.1
+            console.log ("TROVARE TUTTI GLI ARRAY ");
+            console.log("   ");          
+            console.log ("mod:1");
+            $.each(obj.clients,function(index,client)
+            {
+                console.info(client.client);
+                console.info(client.devices_license);
+                console.info(client.booking_lisense);
+            
+                $.each(client.devices,function(index,device)
+                {
+                    console.info('  -'+device.mac);                                  
+                    console.info('  -'+device.type);
+                    console.info('  -'+device.name);
+                    console.info('  -'+device.activation);
+                })
+            })
+            console.info("-------------------------------------");
+            //STAMPA TUTTI GLI ARRAY --MOD.2
+            console.log ("TROVARE TUTTI GLI ARRAY ");
+            console.log("   ");          
+            console.log ("mod:2");
+            obj.clients.forEach(function(client)
+            {
+                console.info(client.client);
+                console.info(client.devices_license);
+                console.info(client.booking_lisense);
+                client.devices.forEach(function(device)
+                {
+                    console.info('  -'+device.mac);
+                    console.info('  -'+device.type);
+                    console.info('  -'+device.name);
+                    console.info('  -'+device.activation);
+                })
+            });
 
 
+            console.info("-------------------------------------");
+            //STAMPA TUTTI GLI ARRAY CICLO FOR--MOD.3
+            console.log ("TROVARE TUTTI GLI ARRAY CICLO FOR");
+            console.log("   ");          
+            console.log ("mod:3");
+
+            var cont1= obj.clients.length;
+            for(var i=0;i<cont1;i++)
+            {
+                console.log(obj.clients[i].client);
+                console.log(obj.clients[i].devices_license);
+                console.log(obj.clients[i].booking_lisense);
+                
+                var cont2=obj.clients[i].devices.length;
+                for(var j=0;j<cont2;j++)
+                {
+                console.log('  -'+obj.clients[i].devices[j].mac);
+                console.log('  -'+obj.clients[i].devices[j].type);
+                console.log('  -'+obj.clients[i].devices[j].name);
+                console.log('  -'+obj.clients[i].devices[j].activation);
+                }
+            }
+
+
+            
+            
+            
 
 
     });
