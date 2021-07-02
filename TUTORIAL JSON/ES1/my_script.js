@@ -145,7 +145,6 @@ $("button").click (function()
             }
 
 
-
             console.info("-------------------------------------");
             //STAMPA TUTTI GLI ARRAY --MOD.1
             console.log ("TROVARE TUTTI GLI ARRAY ");
@@ -159,10 +158,10 @@ $("button").click (function()
             
                 $.each(client.devices,function(index,device)
                 {
-                    console.info('  -'+device.mac);                                  
-                    console.info('  -'+device.type);
-                    console.info('  -'+device.name);
-                    console.info('  -'+device.activation);
+                    console.info('  mac: '+device.mac);                                  
+                    console.info('  type: '+device.type);
+                    console.info('  name: '+device.name);
+                    console.info('  activation: '+device.activation);
                 })
             })
             console.info("-------------------------------------");
@@ -177,10 +176,10 @@ $("button").click (function()
                 console.info(client.booking_lisense);
                 client.devices.forEach(function(device)
                 {
-                    console.info('  -'+device.mac);
-                    console.info('  -'+device.type);
-                    console.info('  -'+device.name);
-                    console.info('  -'+device.activation);
+                    console.info('  mac: '+device.mac);                                  
+                    console.info('  type: '+device.type);
+                    console.info('  name: '+device.name);
+                    console.info('  activation: '+device.activation);
                 })
             });
 
@@ -201,18 +200,12 @@ $("button").click (function()
                 var cont2=obj.clients[i].devices.length;
                 for(var j=0;j<cont2;j++)
                 {
-                console.log('  -'+obj.clients[i].devices[j].mac);
-                console.log('  -'+obj.clients[i].devices[j].type);
-                console.log('  -'+obj.clients[i].devices[j].name);
-                console.log('  -'+obj.clients[i].devices[j].activation);
+                console.log('   mac: '+obj.clients[i].devices[j].mac);
+                console.log('   type: '+obj.clients[i].devices[j].type);
+                console.log('   name: '+obj.clients[i].devices[j].name);
+                console.log('   activation: '+obj.clients[i].devices[j].activation);
                 }
             }
-
-
-            
-            
-            
-
 
     });
 });
