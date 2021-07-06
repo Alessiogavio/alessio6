@@ -74,11 +74,12 @@ $("button").click (function()
         });
         console.log("-------------------------");
         console.log ("  ");
-        
+
+        var tot1=0;var tot2=0;
         ORDERED_DEVICEWS.sort(function(firstEl, secondEl) {
             var s1=0;
             var s2=0; 
-            var tot1=0;var tot2=0;
+            
             var str=ORDERED_DEVICEWS;
             var n=parseInt(str);
             var num=Number(n);
@@ -90,6 +91,7 @@ $("button").click (function()
                 {
                     console.log('NUMBER )='+firstEl[c]);
                     s1=parseInt(firstEl[c])+s1;
+                    tot1 = parseInt(firstEl[c])+tot1;
                 }
                 else{
                     //console.log('NOT NUMBER )= '+firstEl[c]);
@@ -109,6 +111,7 @@ $("button").click (function()
                 {
                     console.log('NUMBER )= '+secondEl[k]);
                     s2 = parseInt(secondEl[k])+s2;
+                    tot2 = parseInt(secondEl[k])+tot2;
                 }
                 else
                 {
@@ -119,13 +122,25 @@ $("button").click (function()
             console.log("risultato: "+Number (s2));
             console.log ("  ");
 
-
-            
-
-
-
           
         });
+        console.log("totale 1° elemento: "+Number (tot1));
+        console.log("totale 2° elemento: "+Number (tot2));
+        console.log("   ");
+        if(tot1>tot2)
+        {
+            console.log("primo elemento più grande");
+        }
+        else{
+            if(tot1<tot2)
+            {
+                console.log("secondo elemento più grande");
+            }
+        }
+        if(tot1==tot2)
+        {
+            console.log("primo e secondo elemento uguali");
+        }
 
         console.log("-------------------------");
         
