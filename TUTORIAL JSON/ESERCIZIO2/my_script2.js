@@ -3,6 +3,7 @@ $("button").click (function()
 
     $.getJSON( "http://local.voome.tv/hmp-finder/alessio.json",function(obj) 
     {
+        
         console.log(obj);  
 
         console.log("-------------------------");
@@ -37,12 +38,14 @@ $("button").click (function()
         
             
         }*/
-
-
+ 
+        //MODIFICARE IN ORDINE CRESCENTE IL MAC
+        console.log("MODIFICARE IN ORDINE CRESCENTE IL MAC");
         var ORDERED_DEVICEWS = [];
         var new_type=[];
         var new_name=[];
         var new_client=[];
+        var DEVICESFULL = [];
 
         console.log("type    mac            name          client");
         $.each(obj.clients,function(index,client)
@@ -54,15 +57,119 @@ $("button").click (function()
                 new_type.push(devices.type);
                 new_name.push(devices.name);
                 new_client.push(client.client);
-                ORDERED_DEVICEWS.sort() 
-                //console.log(devices.type," - "+devices.mac," - "+ devices.name," - "+client.client);
+
+                DEVICESFULL[devices.mac] = {
+                    type: devices.type,
+                    name: devices.name,
+                    client: client.client
+                    
+                };
+                
+                console.log(DEVICESFULL[devices.mac]);
+                
             });
             
+
+            
         });
-        console.log(ORDERED_DEVICEWS);
         console.log("-------------------------");
         console.log ("  ");
         
+        ORDERED_DEVICEWS.sort(function(firstEl, secondEl) {
+            var s1=0;
+            var s2=0; 
+            var tot1=0;var tot2=0;
+            var str=ORDERED_DEVICEWS;
+            var n=parseInt(str);
+            var num=Number(n);
+            console.log("FIRSTEL");
+            for (var c=0;c<firstEl.length;c++)
+            {
+                
+                if(!isNaN(firstEl[c]))
+                {
+                    console.log('NUMBER )='+firstEl[c]);
+                    s1=parseInt(firstEl[c])+s1;
+                }
+                else{
+                    //console.log('NOT NUMBER )= '+firstEl[c]);
+                }
+                
+            }
+            console.log("risultato: "+Number(s1));
+            console.log("   ");
+
+
+
+            console.log ("  ");
+            console.log("SECONDEL");
+            for (var k=0; k<secondEl.length; k++)
+            {
+                if( !isNaN(secondEl[k]) )   //secondEl[k]!=num)
+                {
+                    console.log('NUMBER )= '+secondEl[k]);
+                    s2 = parseInt(secondEl[k])+s2;
+                }
+                else
+                {
+                    //console.log('NOT NUMBER = '+secondEl[k]);
+                }
+                
+            }
+            console.log("risultato: "+Number (s2));
+            console.log ("  ");
+
+
+            
+
+
+
+          
+        });
+
+        console.log("-------------------------");
+        
+       
+        
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        /*
+        console.log(DEVICESFULL);
+        
+
+        DEVICESFULL.sort();
+        
+        
+        console.log("-------------------------");
+        console.log ("  ");
+        console.log("type      mac              name          client");
         for (let j=0;j<5;j++)
         {
                 
@@ -70,11 +177,9 @@ $("button").click (function()
             //console.log(devices.type, " - "+ORDERED_DEVICEWS[j]," - ",devices.name," - ",client.client);
             
             
-            console.info(new_type[j], ' - '+ORDERED_DEVICEWS[j], ' - '+new_name[j], ' - '+new_client[j]);
+            console.info(new_type[j],' -  '+ORDERED_DEVICEWS[j],' -  '+new_name[j],' -  '+new_client[j]);
                   
-        }
-            
-       
-        
+        }*/
+                        
     });
 });
