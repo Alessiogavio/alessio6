@@ -76,10 +76,10 @@ $("button").click (function()
         console.log ("  ");
 
         var tot1=0;var tot2=0;
+         
         ORDERED_DEVICEWS.sort(function(firstEl, secondEl) {
-            var s1=0;
-            var s2=0; 
-            
+            var i=0;
+            var s1=0, s2=0;
             var str=ORDERED_DEVICEWS;
             var n=parseInt(str);
             var num=Number(n);
@@ -89,9 +89,11 @@ $("button").click (function()
                 
                 if(!isNaN(firstEl[c]))
                 {
+                    
                     console.log('NUMBER )='+firstEl[c]);
                     s1=parseInt(firstEl[c])+s1;
                     tot1 = parseInt(firstEl[c])+tot1;
+
                 }
                 else{
                     //console.log('NOT NUMBER )= '+firstEl[c]);
@@ -101,6 +103,9 @@ $("button").click (function()
             console.log("risultato: "+Number(s1));
             console.log("   ");
 
+                
+            
+            
 
 
             console.log ("  ");
@@ -122,8 +127,30 @@ $("button").click (function()
             console.log("risultato: "+Number (s2));
             console.log ("  ");
 
+            i=i+1;
+       
+            if(s1>s2)
+            {
+                console.log("S1",i,"elemento è più grande di S2" ,i ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+            }
+            else{
+                if(s1<s2)
+                {
+                    console.log("S2",i,"elemento è più grande di S1" ,i ," elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+                }
+            }
+            if(s1==s2)
+            {
+                console.log("S1",i, "elemento è uguale a S2" ,i ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+            }
+        
+        
+        console.log ("  ");
+
           
         });
+
+        
         console.log("totale 1° elemento: "+Number (tot1));
         console.log("totale 2° elemento: "+Number (tot2));
         console.log("   ");
@@ -143,32 +170,11 @@ $("button").click (function()
         }
 
         console.log("-------------------------");
+
+        
         
        
         
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
        
        
        
