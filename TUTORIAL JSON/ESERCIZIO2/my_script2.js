@@ -90,21 +90,19 @@ $("button").click (function()
                 if(!isNaN(firstEl[c]))
                 {
                     
-                    console.log('NUMBER )='+firstEl[c]);
-                    s1=parseInt(firstEl[c])+s1;
-                    tot1 = parseInt(firstEl[c])+tot1;
+                    console.log('NUMBER )='+firstEl[c]);    //STAMPA PRIMO ELEMENTO
+                    s1=parseInt(firstEl[c])+s1;     // RISULTATO
+                    tot1 = parseInt(firstEl[c])+tot1;   // SOMMA TOT DEL PRIMO ELEMENTO
 
                 }
                 else{
-                    //console.log('NOT NUMBER )= '+firstEl[c]);
+                    //console.log('NOT NUMBER )= '+firstEl[c]);     //STAMPA CARATTERI ALFABETICI
                 }
                 
             }
-            console.log("risultato: "+Number(s1));
+            console.log("risultato: "+Number(s1));      //STAMPA RISULTATO DI CIASCUN ELEMENTO
             console.log("   ");
 
-                
-            
             
 
 
@@ -114,34 +112,33 @@ $("button").click (function()
             {
                 if( !isNaN(secondEl[k]) )   //secondEl[k]!=num)
                 {
-                    console.log('NUMBER )= '+secondEl[k]);
-                    s2 = parseInt(secondEl[k])+s2;
-                    tot2 = parseInt(secondEl[k])+tot2;
+                    console.log('NUMBER )= '+secondEl[k]);      //STAMPA SECONDO ELEMENTO
+                    s2 = parseInt(secondEl[k])+s2;    // RISULTATO  
+                    tot2 = parseInt(secondEl[k])+tot2;      //SOMMA TOTALE DEL SECONDO ELEMENTO
                 }
                 else
                 {
-                    //console.log('NOT NUMBER = '+secondEl[k]);
+                    //console.log('NOT NUMBER = '+secondEl[k]);     //STAMPA I CARATTERI ALFABETICI
                 }
                 
             }
             console.log("risultato: "+Number (s2));
             console.log ("  ");
-
-            i=i+1;
+            //CONFRONTO SERIE DI RISULTATI PRIMO ELEMENTO CON SECONDO ELEMENTO
        
             if(s1>s2)
             {
-                console.log("S1",i,"elemento è più grande di S2" ,i ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+                console.log("S1",c,"elemento è più grande di S2" ,k ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
             }
             else{
                 if(s1<s2)
                 {
-                    console.log("S2",i,"elemento è più grande di S1" ,i ," elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+                    console.log("S2",c,"elemento è più grande di S1" ,k ," elemento ---> S1 ("+s1+"); S2 ("+s2+")");
                 }
             }
             if(s1==s2)
             {
-                console.log("S1",i, "elemento è uguale a S2" ,i ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
+                console.log("S1",c, "elemento è uguale a S2" ,k ,"elemento ---> S1 ("+s1+"); S2 ("+s2+")");
             }
         
         
@@ -150,7 +147,7 @@ $("button").click (function()
           
         });
 
-        
+        //CONFORNTO TOT PRIMO ELEMENTO COON TOT SECONDO ELEMENTO
         console.log("totale 1° elemento: "+Number (tot1));
         console.log("totale 2° elemento: "+Number (tot2));
         console.log("   ");
