@@ -162,6 +162,7 @@ $("button").click (function()
                 {
                     return 1;
                 }
+                
                 return 0;
             }
             obj.sort(compare);
@@ -173,11 +174,24 @@ $("button").click (function()
             {    
                 ORDINAOBJ.push(devices.mac);
             });
+            ORDINAOBJ.sort(function(primo, secondo) 
+            {
+                var m1=0;m2=0;
+                for(var i=0;i<ORDINAOBJ;i++)
+                {
+                    if(!isNaN(primo[i]))
+                    {                   
+                        console.log('NUMBER )='+primo[i]);  
+                        m1=parseInt(primo[i])+m1;     
+                    }
+                }
+                console.log(primo);
+                console.log("risultato: "+Number(m1));      //STAMPA RISULTATO DI CIASCUN ELEMENTO
+                console.log("\n");
+                
+            });
         });
-        ORDINAOBJ.sort(function(primo, secondo) 
-        {
-            
-        });
+        
 
         
        
