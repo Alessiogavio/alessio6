@@ -151,22 +151,7 @@ $("button").click (function()
 
 
         var ORDINAOBJ=[];
-        /*obj.sort((a,b)=>a.last_mac > b.last_mac && 1 ||-1)
-        {
-            function compare(a,b){
-                if(a.last_mac<b.last_mac)
-                {
-                    return -1;
-                }
-                if(a.last_mac>b.last_mac)
-                {
-                    return 1;
-                }
-                
-                return 0;
-            }
-            obj.sort(compare);
-        }*/
+    
         $.each(obj.clients,function(index,client)
         {
             
@@ -176,6 +161,9 @@ $("button").click (function()
             });
             ORDINAOBJ.sort(function(primo, secondo) 
             {
+                return primo.mac-secondo.mac;
+
+                /*
                 var m1=0;m2=0;
                 for(var i=0;i<ORDINAOBJ;i++)
                 {
@@ -187,23 +175,38 @@ $("button").click (function()
                 }
                 console.log(primo);
                 console.log("risultato: "+Number(m1));      //STAMPA RISULTATO DI CIASCUN ELEMENTO
-                console.log("\n");
+                console.log("\n");*/
                 
             });
         });
         
+                    
+            let arr =['910kcsfnt726','910kcmrnt731','001d50203ce7','001d502075af','001d50220433'];
+            var ris=0;
+            arr.sort(function(a,b)
+            {   
+                
+                /*for(var p=0;p<a;p++)
+                {
+                    if(!isNaN(a[p]))
+                    {
+                        ris=parseInt(a[p])+ris;
+                    }
+                    
+                }*/
+                if(a>b) 
+                return +1;
+                if(a<b) 
+                return -1;
+                return 0;
 
-        
-       
-        
-       
-       
-       
-       
-       
-       
-   
-                        
-    });
-    
+                
+
+            });
+            //console.log(ris);
+            console.log(arr);                            
+            
+            
+
+});
 });
