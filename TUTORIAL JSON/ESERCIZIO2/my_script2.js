@@ -140,14 +140,10 @@ $("button").click (function()
         ORDINA_MAC.push(ORDERED_DEVICEWS);
         console.log("\n");
         
+        
+
         //SORT DI OBJ
-        console.log ("sort di oggetti","\n");
-
-
-
-
-
-
+        console.log ("SORT DI OGGETTT","\n");
 
 
         var ORDINAOBJ=[];
@@ -159,54 +155,67 @@ $("button").click (function()
             {    
                 ORDINAOBJ.push(devices.mac);
             });
-            ORDINAOBJ.sort(function(primo, secondo) 
+            ORDINAOBJ.sort(function(a, b) 
             {
-                return primo.mac-secondo.mac;
-
-                /*
-                var m1=0;m2=0;
-                for(var i=0;i<ORDINAOBJ;i++)
-                {
-                    if(!isNaN(primo[i]))
-                    {                   
-                        console.log('NUMBER )='+primo[i]);  
-                        m1=parseInt(primo[i])+m1;     
-                    }
-                }
-                console.log(primo);
-                console.log("risultato: "+Number(m1));      //STAMPA RISULTATO DI CIASCUN ELEMENTO
-                console.log("\n");*/
                 
+                if(a>b) return +1;
+                if(a<b) return -1;
+                return 0;       
             });
         });
+        console.log(ORDINAOBJ+"");
+        console.log("----------------------------------------");  
+        console.log(""); 
         
-                    
-            let arr =['910kcsfnt726','910kcmrnt731','001d50203ce7','001d502075af','001d50220433'];
-            var ris=0;
-            arr.sort(function(a,b)
-            {   
-                
-                /*for(var p=0;p<a;p++)
-                {
-                    if(!isNaN(a[p]))
-                    {
-                        ris=parseInt(a[p])+ris;
-                    }
-                    
-                }*/
-                if(a>b) 
-                return +1;
-                if(a<b) 
+  
+
+        let clients = obj.clients.sort(function(a, b) {
+            if (a.devices_license > b.devices_license)
+                return 1;
+            else if (!(a.devices_license > b.devices_license))
                 return -1;
+            else
                 return 0;
+        });
+        console.log(clients);
 
+        $("ul#client_list").empty();
+        clients.forEach(client => {
+            var li = $("<li></li>");
+            li.append(client.client + " (" + client.devices_license + " licences)");
+            $("ul#client_list").append(li);
+        });
+
+    
+        
+        
+        $("ul#client_list").click(function(e) 
+        {
+            var pos = $("ul#client_list").index($(this));
+            var devices = clients[pos].devices;
+            console.log(devices);
+            devices.forEach(function(dev)
+            //clients.forEach(client =>  
+            {
+                console.log(dev.name);
+                var li = $("<li></li>");
+                li.append(dev.name + " - "+ dev.mac);
+                $(".client_devices ol").append(li);
+            
+            
                 
-
+            
             });
-            //console.log(ris);
-            console.log(arr);                            
-            
-            
+        });
 
-});
+
+
+
+
+
+
+
+
+    });
+
 });
